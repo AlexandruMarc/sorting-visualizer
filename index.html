@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sorting Visualizer</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="p-3 mb-2 text-white">
+		<header>
+			<h1 class="text-center">Sorting Visualizer</h1>
+			<nav class="navbar navbar-expand-lg navbar-dark">
+				<div class="container-fluid">
+					<button type="button" class="btn btn-outline-success newArray">New Chart</button>
+					<div id="input" class="d-flex align-items-center">
+						<span id="size" class="me-3"
+							>Size
+							<input id="arr_sz" type="range" min="5" max="130" step="1" value="60" aria-label="Array Size" />
+						</span>
+						<span id="speed"
+							>Speed
+							<input id="speed_input" type="range" min="20" max="400" step="10" value="60" aria-label="Sorting Speed" />
+						</span>
+					</div>
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-outline-warning sorting-btn bubbleSort">Bubble Sort</button>
+						<button type="button" class="btn btn-outline-warning sorting-btn quickSort">Quick Sort</button>
+						<button type="button" class="btn btn-outline-warning sorting-btn mergeSort">Merge Sort</button>
+						<button type="button" class="btn btn-outline-warning sorting-btn selectionSort">Selection Sort</button>
+						<button type="button" class="btn btn-outline-warning sorting-btn insertionSort">Insertion Sort</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div id="bars" class="flex-container mt-4"></div>
+
+		<script src="main.js"></script>
+		<script src="bubble.js"></script>
+		<script src="quick.js"></script>
+		<script src="merge.js"></script>
+		<script src="selection.js"></script>
+		<script src="insertion.js"></script>
+	</body>
+</html>
