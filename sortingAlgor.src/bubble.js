@@ -26,20 +26,3 @@ async function bubbleSort() {
 	// Color the first element as sorted
 	bars[0].style.background = "green";
 }
-
-// Event listener for Bubble Sort button click
-const bubbleSortbtn = document.querySelector(".bubbleSort");
-bubbleSortbtn.addEventListener("click", async function () {
-	// Disable UI elements during sorting
-	disableSortingBtn();
-	disableSizeSlider();
-	disableNewArrayBtn();
-
-	// Perform Bubble Sort
-	await bubbleSort();
-
-	// Enable UI elements after sorting
-	enableSortingBtn();
-	enableSizeSlider();
-	enableNewArrayBtn();
-});

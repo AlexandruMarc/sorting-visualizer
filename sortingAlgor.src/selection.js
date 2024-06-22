@@ -37,20 +37,3 @@ async function selectionSort() {
 		bars[i].style.background = "green";
 	}
 }
-
-// Event listener for Selection Sort button click
-const selectionSortbtn = document.querySelector(".selectionSort");
-selectionSortbtn.addEventListener("click", async function () {
-	// Disable UI elements during sorting
-	disableSortingBtn();
-	disableSizeSlider();
-	disableNewArrayBtn();
-
-	// Perform Selection Sort
-	await selectionSort();
-
-	// Enable UI elements after sorting
-	enableSortingBtn();
-	enableSizeSlider();
-	enableNewArrayBtn();
-});

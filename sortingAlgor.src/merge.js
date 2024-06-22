@@ -67,25 +67,3 @@ async function mergeSort(ele, l, r, left, right) {
 	// Merge the sorted halves
 	await merge(ele, l, m, r, left, right);
 }
-
-// Event listener for merge sort button click
-const mergeSortbtn = document.querySelector(".mergeSort");
-mergeSortbtn.addEventListener("click", async function () {
-	let ele = document.querySelectorAll(".bar");
-	let l = 0;
-	let r = parseInt(ele.length) - 1;
-	// Disable UI elements during sorting
-	disableSortingBtn();
-	disableSizeSlider();
-	disableNewArrayBtn();
-
-	//Create left and right array for merge func and wait for mergeSort func
-	const left = new Array(Math.floor(ele.length / 2));
-	const right = new Array(ele.length - Math.floor(ele.length / 2));
-	await mergeSort(ele, l, r, left, right);
-
-	// Enable UI elements after sorting
-	enableSortingBtn();
-	enableSizeSlider();
-	enableNewArrayBtn();
-});

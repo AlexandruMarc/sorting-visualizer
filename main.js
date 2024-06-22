@@ -5,45 +5,26 @@ function swap(el1, el2) {
 	el2.style.height = temp;
 }
 
-// Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
-function disableSortingBtn() {
-	document.querySelector(".bubbleSort").disabled = true;
-	document.querySelector(".insertionSort").disabled = true;
-	document.querySelector(".mergeSort").disabled = true;
-	document.querySelector(".quickSort").disabled = true;
-	document.querySelector(".selectionSort").disabled = true;
+// Disables or Enable sorting buttons used
+function sortingBtn(statement) {
+	document.querySelector(".bubbleSort").disabled = statement;
+	document.querySelector(".insertionSort").disabled = statement;
+	document.querySelector(".mergeSort").disabled = statement;
+	document.querySelector(".quickSort").disabled = statement;
+	document.querySelector(".selectionSort").disabled = statement;
 }
 
-// Enables sorting buttons used in conjunction with disable
-function enableSortingBtn() {
-	document.querySelector(".bubbleSort").disabled = false;
-	document.querySelector(".insertionSort").disabled = false;
-	document.querySelector(".mergeSort").disabled = false;
-	document.querySelector(".quickSort").disabled = false;
-	document.querySelector(".selectionSort").disabled = false;
+// Disables or Enable size slider used
+function sizeSlider(statement) {
+	document.querySelector("#arr_sz").disabled = statement;
 }
 
-// Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
-function disableSizeSlider() {
-	document.querySelector("#arr_sz").disabled = true;
+// Disables or Enable newArray buttons used
+function newChartBtn(statement) {
+	document.querySelector(".newArray").disabled = statement;
 }
 
-// Enables size slider used in conjunction with disable
-function enableSizeSlider() {
-	document.querySelector("#arr_sz").disabled = false;
-}
-
-// Disables newArray buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
-function disableNewArrayBtn() {
-	document.querySelector(".newArray").disabled = true;
-}
-
-// Enables newArray buttons used in conjunction with disable
-function enableNewArrayBtn() {
-	document.querySelector(".newArray").disabled = false;
-}
-
-// Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
+// Used in async function so that we can see animations of sorting, takes input time in ms (1000 = 1s)
 function waitForMe(milisec) {
 	return new Promise((resolve) => {
 		setTimeout(() => {
@@ -110,7 +91,7 @@ function deleteChild() {
 // Selecting new chart button from DOM and adding eventlistener
 const newArray = document.querySelector(".newArray");
 newArray.addEventListener("click", function () {
-	enableSortingBtn();
-	enableSizeSlider();
+	sortingBtn(false);
+	sizeSlider(false);
 	createNewArray(arraySize.value);
 });

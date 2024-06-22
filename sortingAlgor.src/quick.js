@@ -58,24 +58,3 @@ async function quickSort(ele, low, high) {
 		}
 	}
 }
-
-// Event listener for Quick Sort button click
-const quickSortbtn = document.querySelector(".quickSort");
-quickSortbtn.addEventListener("click", async function () {
-	let ele = document.querySelectorAll(".bar");
-	let low = 0;
-	let high = ele.length - 1;
-
-	// Disable UI elements during sorting
-	disableSortingBtn();
-	disableSizeSlider();
-	disableNewArrayBtn();
-
-	// Perform Quick Sort
-	await quickSort(ele, low, high);
-
-	// Enable UI elements after sorting
-	enableSortingBtn();
-	enableSizeSlider();
-	enableNewArrayBtn();
-});

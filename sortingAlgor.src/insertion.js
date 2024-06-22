@@ -36,20 +36,3 @@ async function insertionSort() {
 		bars[i].style.background = "green";
 	}
 }
-
-// Event listener for Insertion Sort button click
-const insertionSortbtn = document.querySelector(".insertionSort");
-insertionSortbtn.addEventListener("click", async function () {
-	// Disable UI elements during sorting
-	disableSortingBtn();
-	disableSizeSlider();
-	disableNewArrayBtn();
-
-	// Perform Insertion Sort
-	await insertionSort();
-
-	// Enable UI elements after sorting
-	enableSortingBtn();
-	enableSizeSlider();
-	enableNewArrayBtn();
-});
