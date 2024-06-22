@@ -4,13 +4,13 @@ async function merge(ele, low, mid, high, left, right) {
 	const n2 = high - mid;
 
 	// Populate the left subarray and color elements in orange
-	for (let i = 0; i < n1; i++) {
+	for (let i = 0; i < n1; ++i) {
 		await waitForMe(delay); // Introduce delay for visualization
 		ele[low + i].style.background = "orange"; // Set orange color
 		left[i] = ele[low + i].style.height;
 	}
 	// Populate the right subarray and color elements in yellow
-	for (let i = 0; i < n2; i++) {
+	for (let i = 0; i < n2; ++i) {
 		await waitForMe(delay);
 		ele[mid + 1 + i].style.background = "yellow"; // Set yellow color
 		right[i] = ele[mid + 1 + i].style.height;
@@ -28,29 +28,29 @@ async function merge(ele, low, mid, high, left, right) {
 		if (parseInt(left[i]) <= parseInt(right[j])) {
 			ele[k].style.background = ele.length === n1 + n2 ? "green" : "lightgreen";
 			ele[k].style.height = left[i];
-			i++;
+			++i;
 		} else {
 			ele[k].style.background = ele.length === n1 + n2 ? "green" : "lightgreen";
 			ele[k].style.height = right[j];
-			j++;
+			++j;
 		}
-		k++;
+		++k;
 	}
 	// Copy any remaining elements from the left subarray into the original array
 	while (i < n1) {
 		await waitForMe(delay);
 		ele[k].style.background = ele.length === n1 + n2 ? "green" : "lightgreen";
 		ele[k].style.height = left[i];
-		i++;
-		k++;
+		++i;
+		++k;
 	}
 	// Copy any remaining elements from the right subarray into the original array
 	while (j < n2) {
 		await waitForMe(delay);
 		ele[k].style.background = ele.length === n1 + n2 ? "green" : "lightgreen";
 		ele[k].style.height = right[j];
-		j++;
-		k++;
+		++j;
+		++k;
 	}
 }
 

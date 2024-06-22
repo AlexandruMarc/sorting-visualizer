@@ -6,7 +6,7 @@ async function partitionLomuto(ele, low, high) {
 	// Color the pivot element
 	ele[pivotIndex].style.background = "red";
 
-	for (let j = low; j < high; j++) {
+	for (let j = low; j < high; ++j) {
 		// Color the current element being compared
 		ele[j].style.background = "yellow";
 		await waitForMe(delay);
@@ -36,7 +36,7 @@ async function partitionLomuto(ele, low, high) {
 	await waitForMe(delay);
 
 	// Reset colors of all elements except the sorted partition
-	for (let k = low; k <= high; k++) {
+	for (let k = low; k <= high; ++k) {
 		if (k !== i && k !== pivotIndex) {
 			ele[k].style.background = "cyan";
 		}

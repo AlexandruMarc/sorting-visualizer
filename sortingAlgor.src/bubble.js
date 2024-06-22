@@ -3,8 +3,8 @@ async function bubbleSort() {
 	const bars = document.querySelectorAll(".bar");
 	const totalBars = bars.length;
 
-	for (let i = 0; i < totalBars - 1; i++) {
-		for (let j = 0; j < totalBars - i - 1; j++) {
+	for (let i = 0; i < totalBars - 1; ++i) {
+		for (let j = 0; j < totalBars - i - 1; ++j) {
 			// Color the elements being compared
 			bars[j].style.background = "blue";
 			bars[j + 1].style.background = "blue";

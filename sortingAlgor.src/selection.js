@@ -3,12 +3,12 @@ async function selectionSort() {
 	const bars = document.querySelectorAll(".bar");
 	const totalBars = bars.length;
 
-	for (let i = 0; i < totalBars; i++) {
+	for (let i = 0; i < totalBars; ++i) {
 		let minIndex = i;
 		// Change color of the current element to be compared
 		bars[i].style.background = "blue";
 
-		for (let j = i + 1; j < totalBars; j++) {
+		for (let j = i + 1; j < totalBars; ++j) {
 			// Change color for the current element being compared
 			bars[j].style.background = "red";
 			await waitForMe(delay);

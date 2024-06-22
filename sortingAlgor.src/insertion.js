@@ -19,10 +19,10 @@ async function insertionSort() {
 			// Color elements being compared
 			bars[j].style.background = "red";
 			bars[j + 1].style.height = bars[j].style.height;
-			j--;
+			--j;
 
 			// Color sorted elements
-			for (let k = i; k >= 0; k--) {
+			for (let k = i; k >= 0; --k) {
 				bars[k].style.background = "green";
 			}
 

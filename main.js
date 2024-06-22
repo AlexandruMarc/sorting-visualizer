@@ -64,7 +64,7 @@ function createNewArray(noOfBars = 60) {
 
 	// creating an array of random numbers
 	array = [];
-	for (let i = 0; i < noOfBars; i++) {
+	for (let i = 0; i < noOfBars; ++i) {
 		array.push(Math.floor(Math.random() * 250) + 1);
 	}
 
